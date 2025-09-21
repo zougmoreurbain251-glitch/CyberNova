@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cybernova_Tech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: skyblue url('https://handigital-formation.com/app/uploads/2020/06/Le-nume%CC%81rique-e1592228464201.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+    }
+
+    header, section {
+      padding: 60px 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      margin: 20px;
+      border-radius: 10px;
+    }
+
+    h1, h2 {
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .domaines {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .domaine {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      width: 180px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .domaine:hover {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .carousel {
+      overflow: hidden;
+      max-width: 100%;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    .slides {
+      display: flex;
+      width: 600%;
+      animation: slide 30s linear infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      16% { transform: translateX(-100%); }
+      32% { transform: translateX(-200%); }
+      48% { transform: translateX(-300%); }
+      64% { transform: translateX(-400%); }
+      80% { transform: translateX(-500%); }
+      100% { transform: translateX(0%); }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #info {
+      margin-top: 20px;
+      font-size: 1.2em;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    @media (max-width: 600px) {
+      .domaines {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+ /* Header */
+    header{position:sticky;top:0;z-index:60;background:rgba(25, 88, 20, 0.8));backdrop-filter:blur(10px) saturate(1.2);border-bottom:1px solid rgba(2,132,199,.15)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 0deg,var(--brand),var(--brand2),#b3e3ff,var(--brand));box-shadow:inset 0 0 20px rgba(2,132,199,.25)}
+    .brand h1{margin:0;font-size:18px;letter-spacing:.1em;text-transform:uppercase;color:var(--sky-700)}
+    nav ul{list-style:none;display:flex;gap:10px;margin:0;padding:0}
+    nav a{padding:8px 10px;border-radius:10px;color:var(--sky-700)}
+    nav a:hover,nav a.active{background:rgba(14,165,233,.12)}
+    .cta{background:linear-gradient(135deg,var(--brand),#3cc6ff);color:#fff;font-weight:800;padding:10px 14px;border-radius:10px;box-shadow:0 10px 20px rgba(14,165,233,.25)}
+
+  </style>
+</head>
+<body>
+
+  <header id="accueil">
+ <div class="progress" id="progress"></div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>CyberNova_Tech Solutions</h1>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="domaine.html">Domaines</a></li>
+          <li><a href="projet.html">Projets</a></li>
+          <li><a href="video.html">Vidéos</a></li>
+          <li><a href="formation.html">Formation</a></li>
+          <li><a href="#contact" class="cta">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#contact">Demander un devis</a>
+    </div>
+  </header>
+
+
+    <h1>Bienvenue dans l'univers Cybernova_Tech</h1>
+    <p>Explore nos competences et nos passions dans le numérique</p>
+  </header>
+
+  <section id="domaines">
+    <h2>Mes Domaines</h2>
+    <div class="domaines">
+      <div class="domaine" onclick="afficherInfo('Développement Web')">💻 Développement Web</div>
+      <div class="domaine" onclick="afficherInfo('Cybersécurité')">🔐 Installations antivirus et protection de vos données</div>
+      <div class="domaine" onclick="afficherInfo('Intelligence Artificielle')">🤖 Intelligence Artificielle</div>
+      <div class="domaine" onclick="afficherInfo('Cloud Computing')">☁️ Data Base et conception de systemes d'informations</div>
+      <div class="domaine" onclick="afficherInfo('Applications Mobiles')">📱 Developpeent de logiciel web et de gestions</div>
+      <div class="domaine" onclick="afficherInfo('Data Analytica')">🧠 Data Analytica</div>
+      <div class="domaine" onclick="afficherInfo('Jeux Video')">🧠 Developpement de jeux video</div>
+    </div>
+    <div id="info"></div>
+  </section>
+
+  <section id="galerie">
+    <h2>CyberNova_Tech</h2>
+    <div class="carousel">
+      <div class="slides">
+        <img src="https://miro.medium.com/0*POjH5vv_7t8s8loG" alt="Web">
+        <img src="https://api.careers.fresenius.com/images/4a9e0fed-f1d2-49ce-92d1-8af5ba2df041" alt="Cyber">
+        <img src="https://pg-p.ctme.caltech.edu/wp-content/uploads/sites/4/2024/09/Is-Data-Science-Hard.jpg" alt="IA">
+        <img src="https://cdn.builtin.com/cdn-cgi/image/f=auto,fit=cover,w=1200,h=635,q=80/sites/www.builtin.com/files/2024-10/data-science.jpg" alt="Cloud">
+        <img src="https://red9systech.com/wp-content/uploads/2025/02/definition-and-scope-of-data-science-Red9SysTech.webp" alt="Mobile">
+        <img src="https://bernardmarr.com/wp-content/uploads/2022/11/The-Top-5-Data-Science-And-Analytics-Trends-In-2023.jpg" alt="Data">
+      </div>
+    </div>
+  </section>
+
+  <section id="apropos">
+    <h2>À propos</h2>
+    <p>Je suis passionné par les technologies du numérique. Mon parcours m’a permis de développer des compétences solides en développement, cybersécurité, IA et bien plus encore.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form onsubmit="envoyerMessage(event)">
+      <input type="text" placeholder="Votre nom" required>
+      <input type="email" placeholder="Votre email" required>
+      <textarea placeholder="Votre message" rows="5" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+    <div id="confirmation"></div>
+  </section>
+
+  <script>
+    function afficherInfo(domaine) {
+      const info = document.getElementById('info');
+      info.innerHTML = `✨ Tu as sélectionné <strong>${domaine}</strong>. Ce domaine est passionnant et plein d'opportunités !`;
+    }
+
+    function envoyerMessage(event) {
+      event.preventDefault();
+      document.getElementById('confirmation').innerHTML = "✅ Merci pour votre message ! Je vous répondrai bientôt.";
+    }
+  </script>
+
+</body>
+</html>

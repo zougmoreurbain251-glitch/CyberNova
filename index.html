@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bienvenue dans l'univer CyberNova_Tech</title>
+  <meta name="description" content="Solutions professionnelles: bases de données, développement d’applications, maintenance, installation, formations, vente de matériel, conception de sites et applications de gestion.">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="preconnect" href="https://videos.pexels.com" crossorigin>
+  <style>
+    :root{
+      --sky-50:#f0f9ff; --sky-100:#e0f2fe; --sky-200:#bae6fd; --sky-300:#7dd3fc;
+      --sky-400:#38bdf8; --sky-500:#0ea5e9; --sky-600:#0284c7; --sky-700:#0369a1;
+      --ink:#0b1220; --panel:#ffffff; --muted:#4a6078; --text:#0b1220;
+      --brand:#0ea5e9; --brand2:#22d3ee; --accent:#f59e0b;
+      --radius:16px; --shadow:0 10px 30px rgba(2,132,199,.2); --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:linear-gradient(180deg,var(--sky-100),var(--sky-50) 35%,#fff 100%)}
+    img{max-width:100%;display:block;height:auto}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.8);backdrop-filter:blur(10px) saturate(1.2);border-bottom:1px solid rgba(2,132,199,.15)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 0deg,var(--brand),var(--brand2),#b3e3ff,var(--brand));box-shadow:inset 0 0 20px rgba(2,132,199,.25)}
+    .brand h1{margin:0;font-size:18px;letter-spacing:.1em;text-transform:uppercase;color:var(--sky-700)}
+    nav ul{list-style:none;display:flex;gap:10px;margin:0;padding:0}
+    nav a{padding:8px 10px;border-radius:10px;color:var(--sky-700)}
+    nav a:hover,nav a.active{background:rgba(14,165,233,.12)}
+    .cta{background:linear-gradient(135deg,var(--brand),#3cc6ff);color:#fff;font-weight:800;padding:10px 14px;border-radius:10px;box-shadow:0 10px 20px rgba(14,165,233,.25)}
+
+    /* Progress bar */
+    .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--brand),var(--brand2));width:0;z-index:70}
+
+    /* Hero */
+    .hero{position:relative;min-height:86vh;display:grid;place-items:center;overflow:hidden;border-bottom:1px solid rgba(2,132,199,.15)}
+    .hero video,.hero .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;filter:saturate(1.05) contrast(1.03)}
+    .hero::after{content:"";position:absolute;inset:0;background:
+      radial-gradient(80% 60% at 50% 30%, rgba(255,255,255,.0) 0%, rgba(224,242,254,.8) 55%, rgba(224,242,254,1) 100%)}
+    .hero-content{position:relative;z-index:2;text-align:center;padding:72px 20px}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(14,165,233,.14);color:var(--sky-700);padding:8px 12px;border-radius:999px;font-weight:800;margin-bottom:10px;border:1px solid rgba(14,165,233,.25)}
+    .hero h2{margin:8px 0 10px;font-size:clamp(28px,5.6vw,54px);line-height:1.06;color:var(--ink)}
+    .hero p{max-width:860px;margin:0 auto 18px;color:var(--muted)}
+    .hero-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;font-weight:800;border:1px solid rgba(14,165,233,.2);background:#fff;color:var(--ink);box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#2fbef7);color:#fff;border:none}
+    .btn.alt{background:linear-gradient(135deg,var(--brand2),#67e8f9);color:#065f46;border:none}
+    .btn.ghost{background:transparent}
+
+    /* Sections */
+    section{padding:64px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:18px}
+    .section-head h3{margin:0;font-size:24px;color:var(--sky-800,#075985)}
+    .section-head p{margin:0;color:var(--muted)}
+
+    /* Grid & cards */
+    .grid{display:grid;gap:16px}
+    @media (min-width:640px){.grid-2{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:960px){.grid-3{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}}
+    .card{background:#fff;border:1px solid rgba(2,132,199,.15);border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px rgba(2,132,199,.12)}
+    .media{position:relative;aspect-ratio:16/9;overflow:hidden;background:linear-gradient(180deg,#e0f2fe,#fff)}
+    .media img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+    .card:hover .media img{transform:scale(1.06)}
+    .body{padding:14px}
+    .tag{font-size:12px;background:#eff6ff;border:1px solid rgba(2,132,199,.25);color:#0369a1;padding:4px 8px;border-radius:999px}
+    .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .pill{font-size:12px;color:#0b1220;border:1px solid rgba(2,132,199,.2);padding:4px 8px;border-radius:999px;background:#fff}
+
+    /* Tabs (domaines) */
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .tab{padding:10px 12px;border-radius:999px;border:1px solid rgba(14,165,233,.35);cursor:pointer;color:#075985;background:#ffffff}
+    .tab.active{background:linear-gradient(135deg,#e0f2fe,#ffffff);box-shadow:0 4px 14px rgba(2,132,199,.15)}
+    .tabpanes > .pane{display:none}
+    .tabpanes > .pane.active{display:block;animation:fade .35s ease}
+    @keyframes fade{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+    /* Toolbar projets */
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:linear-gradient(180deg,#e0f2fe,#f8fdff);border:1px solid rgba(2,132,199,.2);border-radius:14px;padding:12px}
+    .toolbar input{flex:1;min-width:220px;padding:12px;border-radius:10px;border:1px solid rgba(2,132,199,.3);background:#fff;color:var(--ink)}
+    .chip{font-size:12px;color:#075985;border:1px solid rgba(2,132,199,.35);padding:8px 10px;border-radius:999px;background:#fff;cursor:pointer}
+    .chip.active{background:#dbeafe}
+
+    /* Carousel */
+    .carousel{position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(2,132,199,.2);background:#fff}
+    .track{display:flex;transition:transform .6s ease}
+    .slide{min-width:100%;position:relative}
+    .slide img{width:100%;height:460px;object-fit:cover;display:block}
+    .car-ctrl{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;padding:0 6px;pointer-events:none}
+    .car-ctrl button{pointer-events:auto;background:rgba(2,132,199,.2);border:1px solid rgba(2,132,199,.35);color:#075985;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:900}
+
+    .play{position:absolute;inset:auto auto 12px 12px;background:rgba(14,165,233,.9);color:#fff;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.3);font-weight:800}
+
+    /* Counters */
+    .counters{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (min-width:800px){.counters{grid-template-columns:repeat(4,1fr)}}
+    .counter{background:#ffffff;border:1px solid rgba(2,132,199,.2);border-radius:14px;padding:18px;text-align:center;box-shadow:0 8px 18px rgba(2,132,199,.12)}
+    .counter strong{display:block;font-size:26px;color:#075985}
+    .counter span{color:var(--muted)}
+
+    /* FAQ & newsletter */
+    .faq-item{background:#ffffff;border:1px solid rgba(2,132,199,.2);border-radius:14px;padding:14px}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:pointer}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--muted)}
+    .faq-item.open .faq-a{max-height:200px}
+    .newsletter{background:linear-gradient(135deg,#e0f2fe,#ffffff);border:1px solid rgba(2,132,199,.25);border-radius:16px;padding:20px}
+    .newsletter form{display:grid;grid-template-columns:1fr auto;gap:10px}
+    .newsletter input{padding:14px 12px;border-radius:12px;border:1px solid rgba(2,132,199,.35);background:#fff;color:var(--ink)}
+    .newsletter button{padding:12px 16px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--brand),#3cc6ff);color:#fff;font-weight:900}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(2,132,199,.2);background:#f0f9ff;padding:28px 0;color:#0b1220}
+    .footer-grid{display:grid;gap:16px}
+    @media (min-width:900px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+    .foot-title{color:#075985;font-weight:900;margin-bottom:10px}
+    .foot-link{display:block;margin:6px 0;color:#0b1220}
+    .foot-link:hover{color:#0369a1}
+
+    /* Reveal on scroll */
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* Responsive nav simple */
+    @media (max-width:900px){nav ul{display:none}}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>CyberNova_Tech Solutions</h1>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="domaine.html">Domaines</a></li>
+          <li><a href="projet.html">Projets</a></li>
+          <li><a href="video.html">Vidéos</a></li>
+          <li><a href="formation.html">Formation</a></li>
+          <li><a href="#contact" class="cta">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#contact">Demander un devis</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="accueil" class="hero" aria-label="Section d’accueil">
+    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop">
+      <source src="https://videos.pexels.com/video-files/1748629/1748629-uhd_3840_2160_25fps.mp4" type="video/mp4">
+    </video>
+    <img class="hero-img" alt="" loading="lazy" src="https://images.unsplash.com/photo-1527434002500-c5f9c8d4cd2d?q=80&w=1600&auto=format&fit=crop" />
+    <div class="hero-content container">
+      <span class="badge">Bases de données • Développement • Maintenance • Formations • Vente d’appareils • Conception web</span>
+      <h2>Des projets informatiques solides, livrés vite et bien.</h2>
+      <p>Nous concevons des applications, automatisons vos processus, sécurisons vos données et formons vos équipes. Avec transparence, méthode et résultats.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="domaine.html">Découvrir nos autres domaines</a>
+        <a class="btn alt" href="projet.html">Voir les projets</a>
+        <a class="btn" href="video.html">Regarder les démos</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- STATS -->
+  <section>
+    <div class="container counters reveal">
+      <div class="counter"><strong data-count="120">0</strong><span>Projets livrés</span></div>
+      <div class="counter"><strong data-count="48">0</strong><span>Formations/an</span></div>
+      <div class="counter"><strong data-count="88">0</strong><span>% satisfaction</span></div>
+      <div class="counter"><strong data-count="10">0</strong><span>Années d’expérience</span></div>
+    </div>
+  </section>
+
+  <!-- DOMAINES (tabs) -->
+  <section id="domaines">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h3>Domaines d’expertise</h3>
+          <p>Du design à la prod: nous couvrons l’ensemble de la chaîne de valeur.</p>
+        </div>
+        <a class="btn" href="#contact">Parler à un expert</a>
+      </div>
+
+      <div class="tabs reveal" role="tablist">
+        <button class="tab active" data-tab="db">Bases de données</button>
+        <button class="tab" data-tab="dev">Développement d’applications</button>
+        <button class="tab" data-tab="maint">Maintenance & support</button>
+        <button class="tab" data-tab="forma">Formations</button>
+        <button class="tab" data-tab="vente">Vente d’appareils informatiques</button>
+        <button class="tab" data-tab="web">Conception web & apps de gestion</button>
+      </div>
+
+      <div class="tabpanes">
+        <div class="pane active reveal" id="db">
+          <div class="grid grid-3">
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Architecture data"></div>
+              <div class="body">
+                <h4>Architecture & modélisation</h4>
+                <p style="color:var(--muted)">Conception schémas, normalisation, performance.</p>
+                <div class="meta"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">SQL Server</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="      https://th.bing.com/th/id/OIP.kTKMPm3kL0kNNa9QNtmk3gHaHa?w=200&h=200&c=7&r=0&o=7&pid=1.7&rm=3                     " alt="ETL pipelines"></div>
+              <div class="body">
+                <h4>ETL & intégration</h4>
+                <p style="color:var(--muted)">Pipelines, data quality, audits & logs.</p>
+                <div class="meta"><span class="tag">Airflow</span><span class="tag">DBT</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&auto=format&fit=crop" alt="Sécurité data"></div>
+              <div class="body">
+                <h4>Sauvegarde & sécurité</h4>
+                <p style="color:var(--muted)">Backups, chiffrement, reprise d’activité.</p>
+                <div class="meta"><span class="tag">PRA</span><span class="tag">GDPR</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="pane reveal" id="dev">
+          <div class="grid grid-3">
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=1200&auto=format&fit=crop" alt="Front-end moderne"></div>
+              <div class="body">
+                <h4>Apps web modernes</h4>
+                <p style="color:var(--muted)">React/Next, accessibilité, design system.</p>
+                <div class="meta"><span class="tag">React</span><span class="tag">Next.js</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop" alt="Mobile multi-plateformes"></div>
+              <div class="body">
+                <h4>Mobile iOS/Android</h4>
+                <p style="color:var(--muted)">Flutter, CI mobile, stores.</p>
+                <div class="meta"><span class="tag">Flutter</span><span class="tag">RN</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="APIs et backend"></div>
+              <div class="body">
+                <h4>Back-end & Front-end</h4>
+                <p style="color:var(--muted)">Laravel/Nest, sécurité, observabilité.</p>
+                <div class="meta"><span class="tag">Laravel</span><span class="tag">NestJS</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="pane reveal" id="maint">
+          <div class="grid grid-3">
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=1200&auto=format&fit=crop" alt="Maintenance préventive"></div>
+              <div class="body">
+                <h4>Support & supervision</h4>
+                <p style="color:var(--muted)">Monitoring, alerting, SLA.</p>
+                <div class="meta"><span class="tag">DevOps</span><span class="tag">SRE</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Sécurité"></div>
+              <div class="body">
+                <h4>Cybersécurité</h4>
+                <p style="color:var(--muted)">Durcissement, patching, audits.</p>
+                <div class="meta"><span class="tag">OWASP</span><span class="tag">EDR</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Cloud"></div>
+              <div class="body">
+                <h4>Cloud & coûts</h4>
+                <p style="color:var(--muted)">Optimisation, IaC, sauvegardes.</p>
+                <div class="meta"><span class="tag">K8s</span><span class="tag">Terraform</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="pane reveal" id="forma">
+          <div class="grid grid-3">
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1200&auto=format&fit=crop" alt="Formation front-end"></div>
+              <div class="body">
+                <h4>Front-end Pro</h4>
+                <p style="color:var(--muted)">Présentiel/En ligne • Projet réel</p>
+                <div class="meta"><span class="tag">React</span><span class="tag">UX</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1551281044-8e8b56aa95a5?q=80&w=1200&auto=format&fit=crop" alt="Data & IA"></div>
+              <div class="body">
+                <h4>Data & IA</h4>
+                <p style="color:var(--muted)">Python • ML • MLOps</p>
+                <div class="meta"><span class="tag">Data</span><span class="tag">ML</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1518770557810-6f12e72f7b30?q=80&w=1200&auto=format&fit=crop" alt="DevOps"></div>
+              <div class="body">
+                <h4>DevOps pratique</h4>
+                <p style="color:var(--muted)">Docker • CI/CD • Cloud</p>
+                <div class="meta"><span class="tag">DevOps</span><span class="tag">Cloud</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="pane reveal" id="vente">
+          <div class="grid grid-3">
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1200&auto=format&fit=crop" alt="Écran 4K"></div>
+              <div class="body">
+                <h4>Moniteurs & périphériques</h4>
+                <p style="color:var(--muted)">4K, audio, claviers méca, souris.</p>
+                <div class="meta"><span class="tag">Matériel</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop" alt="Casque audio"></div>
+              <div class="body">
+                <h4>Audio & streaming</h4>
+                <p style="color:var(--muted)">Micros, casques, webcams HD.</p>
+                <div class="meta"><span class="tag">Streaming</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="PC & réseau"></div>
+              <div class="body">
+                <h4>PC & réseau</h4>
+                <p style="color:var(--muted)">Stations, NAS, routeurs.</p>
+                <div class="meta"><span class="tag">Infra</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="pane reveal" id="web">
+          <div class="grid grid-3">
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="Sites vitrines"></div>
+              <div class="body">
+                <h4>Conception de sites</h4>
+                <p style="color:var(--muted)">Vitrines, e-commerce, SEO.</p>
+                <div class="meta"><span class="tag">WordPress</span><span class="tag">Headless</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1200&auto=format&fit=crop" alt="Apps de gestion"></div>
+              <div class="body">
+                <h4>Applications de gestion</h4>
+                <p style="color:var(--muted)">CRM, stock, facturation.</p>
+                <div class="meta"><span class="tag">SaaS</span><span class="tag">ERP</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="media"><img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1200&auto=format&fit=crop" alt="Portails web"></div>
+              <div class="body">
+                <h4>Applications web</h4>
+                <p style="color:var(--muted)">Dashboards, extranet, API.</p>
+                <div class="meta"><span class="tag">Web</span><span class="tag">API</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJETS avec recherche/filtre -->
+  <section id="projets" style="background:linear-gradient(180deg,#e0f2fe,#f8fdff);border-top:1px solid rgba(2,132,199,.2);border-bottom:1px solid rgba(2,132,199,.2)">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h3>Réalisations & projets</h3>
+          <p>Un aperçu de ce que nous livrons au quotidien.</p>
+        </div>
+        <a class="btn" href="#contact">Discuter d’un projet</a>
+      </div>
+
+      <div class="toolbar reveal">
+        <input id="q" type="search" placeholder="Rechercher: CRM, e-commerce, data, mobile, API..." aria-label="Recherche">
+        <button class="chip active" data-filter="all">Tout</button>
+        <button class="chip" data-filter="web">Web</button>
+        <button class="chip" data-filter="mobile">Mobile</button>
+        <button class="chip" data-filter="data">Data</button>
+        <button class="chip" data-filter="gestion">Gestion</button>
+      </div>
+
+      <div class="grid grid-3" id="project-list" style="margin-top:16px;">
+        <article class="card item reveal" data-tags="web gestion">
+          <div class="media"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="ERP web"></div>
+          <div class="body">
+            <h4>ERP web — stock & facturation</h4>
+            <p style="color:var(--muted)">Gestion produits, TVA, exports comptables.</p>
+            <div class="meta"><span class="pill">Next.js</span><span class="pill">PostgreSQL</span></div>
+          </div>
+        </article>
+        <article class="card item reveal" data-tags="mobile gestion">
+          <div class="media"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop" alt="App mobile"></div>
+          <div class="body">
+            <h4>Application de gestion — CRM terrain</h4>
+            <p style="color:var(--muted)">Leads, visites, devis, offline first.</p>
+            <div class="meta"><span class="pill">Flutter</span><span class="pill">REST</span></div>
+          </div>
+        </article>
+        <article class="card item reveal" data-tags="data web">
+          <div class="media"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Data analytics"></div>
+          <div class="body">
+            <h4>Data hub & dashboards</h4>
+            <p style="color:var(--muted)">Intégration multi-sources, KPIs temps réel.</p>
+            <div class="meta"><span class="pill">DBT</span><span class="pill">Metabase</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDÉOS (carousel + modale) -->
+  <section id="videos">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h3>Vidéos & démos</h3>
+          <p>Présentations courtes de nos produits et méthodes.</p>
+        </div>
+      </div>
+
+      <div class="carousel reveal">
+        <div class="track">
+          <figure class="slide">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1600&auto=format&fit=crop" alt="Démo dev">
+            <figcaption class="body" style="position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.9);padding:8px 10px;border-radius:10px">
+              Déploiement CI/CD
+              <button class="play" data-video="https://www.youtube.com/embed/aqz-KE-bpKQ">Regarder</button>
+            </figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop" alt="Démo cloud">
+            <figcaption class="body" style="position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.9);padding:8px 10px;border-radius:10px">
+              Observabilité & logs
+              <button class="play" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">Regarder</button>
+            </figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1600&auto=format&fit=crop" alt="Démo data">
+            <figcaption class="body" style="position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.9);padding:8px 10px;border-radius:10px">
+              ETL & Data Quality
+              <button class="play" data-video="https://www.youtube.com/embed/5qap5aO4i9A">Regarder</button>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="car-ctrl" aria-hidden="false">
+          <button class="prev" aria-label="Précédent">‹</button>
+          <button class="next" aria-label="Suivant">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ + NEWSLETTER + CONTACT -->
+  <section id="contact" style="background:linear-gradient(180deg,#e0f2fe,#f8fdff);border-top:1px solid rgba(2,132,199,.2);border-bottom:1px solid rgba(2,132,199,.2)">
+    <div class="container">
+      <div class="grid grid-2">
+        <div>
+          <div class="section-head reveal">
+            <div>
+              <h3>FAQ</h3>
+              <p>Les réponses aux questions courantes.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <div class="faq-q"><strong>Quels délais pour un MVP ?</strong><span>+</span></div>
+            <div class="faq-a"><p>Selon la portée: 4 à 8 semaines avec sprints hebdomadaires et démos.</p></div>
+          </div>
+          <div class="faq-item reveal">
+            <div class="faq-q"><strong>Proposez-vous maintenance & support ?</strong><span>+</span></div>
+            <div class="faq-a"><p>Oui: supervision, correctifs, amélioration continue, avec SLA.</p></div>
+          </div>
+          <div class="faq-item reveal">
+            <div class="faq-q"><strong>Formations: présentiel ou en ligne ?</strong><span>+</span></div>
+            <div class="faq-a"><p>Les deux. Sessions live + replays, quiz et certificats.</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="section-head reveal">
+            <div>
+              <h3>Nous contacter</h3>
+              <p>Décrivez votre besoin, on vous répond vite.</p>
+            </div>
+          </div>
+          <div class="newsletter reveal">
+            <form onsubmit="event.preventDefault(); alert('Merci ! Nous revenons vers vous rapidement.');">
+              <input type="text" placeholder="Votre nom" required>
+              <input type="email" placeholder="Votre email" required>
+              <input type="text" placeholder="Sujet: ex. Application de gestion" required>
+              <button type="submit">Envoyer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section id="inscription" style="background:linear-gradient(180deg,#e0f2fe,#f8fdff);border-top:1px solid rgba(2,132,199,.2);padding:64px 0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <h3>Inscription</h3>
+        <p>Rejoins nos formations, demande un devis ou inscris-toi à nos services.</p>
+      </div>
+    </div>
+
+    <form id="formInscription" class="newsletter reveal" style="max-width:700px;margin:0 auto;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+        <input type="text" name="nom" placeholder="Votre nom" required>
+        <input type="tel" name="tel" placeholder="Téléphone" required>
+      </div>
+      <input type="email" name="email" placeholder="Email" required style="margin-bottom:12px;">
+      <select name="domaine" required style="padding:14px 12px;border-radius:12px;border:1px solid rgba(2,132,199,.35);background:#fff;color:#0b1220;margin-bottom:12px;">
+        <option value="">Choisissez un domaine</option>
+        <option value="formation">Formation</option>
+        <option value="developpement">Développement d’application</option>
+        <option value="maintenance">Maintenance informatique</option>
+        <option value="vente">Vente d’appareils informatiques</option>
+        <option value="siteweb">Conception de site web</option>
+        <option value="gestion">Application de gestion</option>
+      </select>
+      <button type="submit">S’inscrire</button>
+      <p id="confirmation" style="margin-top:12px;color:green;font-weight:600;display:none;">✅ Merci ! Votre inscription est enregistrée.</p>
+    </form>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:10px;">
+          <div class="logo" aria-hidden="true"></div>
+          <h4 style="margin:0">CyberNova_Tech Solutions</h4>
+        </div>
+        <p>somgande — Burkina Faso. Développement, data, maintenance, formations, matériel & web.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+          <span class="pill">   </span><span class="pill">   </span><span class="pill">  </span>
+        </div>
+      </div>
+      <div>
+        <div class="foot-title">Domaines</div>
+        <a class="foot-link" href="#domaines">Bases de données</a>
+        <a class="foot-link" href="#domaines">Développement</a>
+        <a class="foot-link" href="#domaines">Maintenance</a>
+        <a class="foot-link" href="#domaines">Formations</a>
+      </div>
+      <div>
+        <div class="foot-title">Offres</div>
+        <a class="foot-link" href="#projets">Projets</a>
+        <a class="foot-link" href="#videos">Vidéos</a>
+        <a class="foot-link" href="#contact">Devis</a>
+      </div>
+      <div>
+        <div class="foot-title">Contact</div>
+        <a class="foot-link" href="tel:+22657373016">+226 57373016</a>
+        <a class="foot-link" href="mailto:contact@skytech.bf">Zougmoreurbain089@gmail.com</a>
+        <span class="foot-link">Somgandé, Centre ouagadougu — Burkina Faso</span>
+      </div>
+    </div>
+    <div class="container" style="margin-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <small>© <span id="year"></span> cybernova_Tech. Tous droits réservés.</small>
+      <small><a href="#">Mentions légales</a> • <a href="#">Confidentialité</a></small>
+    </div>
+  </footer>
+
+  <!-- MODALE VIDEO -->
+  <div class="modal" id="videomodal" aria-modal="true" role="dialog" style="position:fixed;inset:0;background:rgba(11,18,32,.7);display:none;align-items:center;justify-content:center;z-index:100;padding:20px">
+    <div class="modal-inner" style="width:min(960px,95vw);aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;position:relative">
+      <button class="modal-close" aria-label="Fermer la vidéo" style="position:absolute;top:8px;right:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;padding:8px 12px;font-weight:900;z-index:5">✕</button>
+      <iframe id="videoframe" width="100%" height="100%" src="" title="Vidéo" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    // Année footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Barre de progression scroll
+    const progress = document.getElementById('progress');
+    window.addEventListener('scroll', ()=>{
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop)/(h.scrollHeight - h.clientHeight);
+      progress.style.width = (scrolled*100) + '%';
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting){ ent.target.classList.add('visible'); observer.unobserve(ent.target); }
+      });
+    },{threshold:.15, rootMargin:'0px 0px -10% 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    // Compteurs
+    function animateCounter(el){
+      const target = +el.getAttribute('data-count');
+      const duration = 1200;
+      const start = performance.now();
+      function step(ts){
+        const p = Math.min(1, (ts - start)/duration);
+        el.textContent = Math.floor(p*target).toString();
+        if(p<1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    document.querySelectorAll('.counter strong').forEach(el=>{
+      const io = new IntersectionObserver(ents=>{
+        ents.forEach(e=>{
+          if(e.isIntersecting){ animateCounter(el); io.disconnect(); }
+        });
+      },{threshold:.6});
+      io.observe(el);
+    });
+
+    // Tabs
+    const tabs = document.querySelectorAll('.tab');
+    const panes = document.querySelectorAll('.pane');
+    tabs.forEach(t=>{
+      t.addEventListener('click', ()=>{
+        tabs.forEach(x=>x.classList.remove('active'));
+        panes.forEach(p=>p.classList.remove('active'));
+        t.classList.add('active');
+        document.getElementById(t.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Projets: recherche + filtre
+    (function(){
+      const q = document.getElementById('q');
+      const chips = document.querySelectorAll('.toolbar .chip');
+      const items = document.querySelectorAll('#project-list .item');
+      let current='all';
+      function match(it){
+        const text = it.textContent.toLowerCase();
+        const tags = (it.dataset.tags||'').toLowerCase();
+        const qq = (q.value||'').toLowerCase();
+        const catOk = current==='all' || tags.includes(current);
+        const qOk = !qq || text.includes(qq);
+        it.style.display = (catOk && qOk) ? '' : 'none';
+      }
+      q.addEventListener('input', ()=> items.forEach(match));
+      chips.forEach(c=>{
+        c.addEventListener('click', ()=>{
+          chips.forEach(x=>x.classList.remove('active'));
+          c.classList.add('active');
+          current=c.dataset.filter;
+          items.forEach(match);
+        });
+      });
+    })();
+
+    // Carousel vidéos
+    (function(){
+      const root = document.querySelector('#videos');
+      const track = root.querySelector('.track');
+      const slides = root.querySelectorAll('.slide');
+      const prev = root.querySelector('.prev');
+      const next = root.querySelector('.next');
+      let index=0;
+      function update(){ track.style.transform = `translateX(-${index*100}%)`; }
+      prev && prev.addEventListener('click', ()=>{ index=(index-1+slides.length)%slides.length; update(); });
+      next && next.addEventListener('click', ()=>{ index=(index+1)%slides.length; update(); });
+      setInterval(()=>{ index=(index+1)%slides.length; update(); }, 7000);
+    })();
+
+    // Modale vidéo
+    (function(){
+      const modal = document.getElementById('videomodal');
+      const frame = document.getElementById('videoframe');
+      function open(url){ frame.src = url + (url.includes('?')?'&':'?') + 'autoplay=1'; modal.style.display='flex'; }
+      function close(){ frame.src=''; modal.style.display='none'; }
+      document.querySelectorAll('.play').forEach(b=> b.addEventListener('click',()=>open(b.dataset.video)));
+      modal.querySelector('.modal-close').addEventListener('click', close);
+      modal.addEventListener('click', e=>{ if(e.target===modal) close(); });
+      window.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+    })();
+  </script>
+
+<script>
+  document.getElementById('formInscription').addEventListener('submit', function(e){
+    e.preventDefault();
+    const form = e.target;
+    const nom = form.nom.value.trim();
+    const email = form.email.value.trim();
+    const tel = form.tel.value.trim();
+    const domaine = form.domaine.value;
+
+    if(nom && email && tel && domaine){
+      document.getElementById('confirmation').style.display = 'block';
+      form.reset();
+    } else {
+      alert("Veuillez remplir tous les champs.");
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mes Projets Informatiques</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background-image: url('https://img.freepik.com/free-vector/global-technology-earth-concept-blue-background-design_1017-27072.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 43, 92, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      z-index: 1000;
+      animation: fadeIn 1s ease-in;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: white;
+    }
+
+    .call-button {
+      background-color: #00ffcc;
+      color: #001f3f;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background-color: rgba(0, 43, 92, 0.8);
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #00ffcc;
+    }
+
+    .project-block {
+      position: relative;
+      padding: 80px 20px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-out;
+    }
+
+    .project-block.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-content {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    .project-content h2 {
+      color: #00ffcc;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      font-size: 1.1em;
+    }
+
+    .cta {
+      background-color: rgba(0, 51, 102, 0.9);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .cta h3 {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+      color: #00ffcc;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 24px;
+      background-color: #00ffcc;
+      color: #001f3f;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: rgba(0, 13, 26, 0.9);
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu de navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href=" domaine.html">Nos domaines</a></li>
+      <li><a href="projet.html">Nos projets</a></li>
+      <li><a href="video.html">Vidéo</a></li>
+      <li><a href="formation.html">Formation</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+    </ul>
+    <a class="call-button" href="tel:+22657373016">📞 Appeler</a>
+  </nav>
+
+  <header>
+    <h1>Mes Projets Informatiques</h1>
+    <p>Découvrez mes réalisations techniques en détail</p>
+  </header>
+
+  <section id="projet1" class="project-block" style="background-image: url('https://www.nord-erp-crm.fr/wp-content/uploads/2021/08/gestion-informatique.jpg');">
+    <div class="project-content">
+      <h2>Application de gestion scolaire et de stock</h2>
+      <p>Plateforme web pour gérer les élèves, les notes et les emplois du temps. Technologies : HTML, CSS, JS, PHP, MySQL. Fonctionnalités : export PDF, interface intuitive, sécurité renforcée.</p>
+    </div>
+  </section>
+
+  <section id="projet2" class="project-block" style="background-image: url('https://img.freepik.com/free-photo/hotel-room-with-bed_1203-1443.jpg');">
+    <div class="project-content">
+      <h2>   Système de réservation en ligne</h2>
+      <p>Site de réservation pour hôtels avec calendrier dynamique, paiement en ligne via Stripe, et tableau de bord admin. Framework : Laravel. Responsive et sécurisé.</p>
+    </div>
+  </section>
+
+  <section id="projet3" class="project-block" style="background-image: url('https://img.freepik.com/free-photo/modern-creative-portfolio-design_23-2149440312.jpg');">
+    <div class="project-content">
+      <h2>Conception de jeux video et de graphisme</h2>
+      <p>Site personnel avec animations GSAP, galerie Swiper.js, formulaire de contact, et design responsive. Présentation élégante des projets avec effets visuels.</p>
+    </div>
+  </section>
+
+  <section id="projet4" class="project-block" style="background-image: url('https://img.freepik.com/free-photo/health-monitoring-app-smartphone_53876-127194.jpg');">
+    <div class="project-content">
+      <h2>Logiciel de base de donnée pour les entreprises et les Banques</h2>
+      <p>. Stockage local avec SQLite, synchronisation cloud, notifications, et interface ergonomique.</p>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h3>Envie de collaborer ou de voir une démo ?</h3>
+    <a href="zougmoreurbain@089gmail.com">Contactez-moi</a>
+  </div>
+
+  <footer>
+    <p>Contact : monadresse@email.com</p>
+    <p>&copy; Cybernova_Tech </p>
+  </footer>
+
+  <script>
+    // Animation automatique des sections au scroll
+    const blocks = document.querySelectorAll('.project-block');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    blocks.forEach(block => observer.observe(block));
+  </script>
+
+</body>
+</html>
