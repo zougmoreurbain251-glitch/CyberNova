@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Bienvenue dans l'univer CyberNova_Tech</title>
   <meta name="description" content="Solutions professionnelles: bases de données, développement d’applications, maintenance, installation, formations, vente de matériel, conception de sites et applications de gestion.">
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
@@ -125,24 +126,34 @@
 
     /* Responsive nav simple */
     @media (max-width:900px){nav ul{display:none}}
+
+
+
+
+/* Exemple de mise en page responsive */
 .container {
   width: 100%;
-  padding: 1em;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
+img {
+  max-width: 100%;
+  height: auto;
 }
-@media (max-width: 768px) {
+
+@media screen and (max-width: 768px) {
   .menu {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .col {
+    width: 100%;
   }
 }
 
-
-
-    
   </style>
 </head>
 <body>
@@ -732,4 +743,3 @@
 
 </body>
 </html>
-
