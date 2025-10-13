@@ -1,123 +1,147 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CyberNova_Tech Solutions</title>
+  <title>Bienvenue dans l'univers CyberNova_Tech</title>
   <style>
-    /* RESET DE BASE */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #0f172a;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #0a0a0a, #1e1e1e);
       color: white;
       overflow-x: hidden;
     }
 
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 50px;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
-    header img.logo {
+    /* --- Ajout du logo --- */
+    .site-logo {
+      width: 50px;
       height: 50px;
-      width: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     nav ul {
-      display: flex;
-      gap: 25px;
       list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: bold;
       transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #38bdf8;
+      color: #00bcd4;
     }
 
-    /* --- SECTION PRINCIPALE --- */
     main {
-      padding-top: 120px;
       text-align: center;
+      padding: 50px 20px;
     }
 
-    /* --- RESPONSIVE DESIGN --- */
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.8);
+      margin-top: 50px;
+      font-size: 0.9em;
+    }
+
+    /* --- Responsive pour mobile --- */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
-        padding: 15px 20px;
+        align-items: flex-start;
+      }
+
+      .site-logo {
+        width: 40px;
+        height: 40px;
+      }
+
+      .brand h1 {
+        font-size: 1.2em;
       }
 
       nav ul {
         flex-direction: column;
         gap: 10px;
-        margin-top: 10px;
-      }
-
-      header img.logo {
-        height: 40px;
-      }
-
-      main {
-        padding-top: 150px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header {
-        padding: 10px 15px;
+        width: 100%;
+        padding-top: 10px;
       }
 
       nav a {
-        font-size: 14px;
-      }
-
-      header img.logo {
-        height: 35px;
+        display: block;
+        padding: 8px 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
       }
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
-    <!-- 🟢 TON LOGO -->
-    <img src="images/logo.png" alt="Logo CyberNova_Tech Solutions" class="logo">
+    <div class="brand">
+      <img src="ton-logo.png" alt="Logo CyberNova_Tech" class="site-logo">
+      <h1>CyberNova_Tech Solutions</h1>
+    </div>
 
     <nav>
       <ul>
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Produits</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Bienvenue chez CyberNova_Tech Solutions</h1>
-    <p>Experts en innovation, cybersécurité et transformation numérique.</p>
+    <h1>Bienvenue dans l'univers CyberNova_Tech</h1>
+    <p>
+      Explorez nos solutions technologiques innovantes qui repoussent les limites du numérique.
+      Que vous soyez une entreprise, un développeur ou un passionné, nous avons ce qu’il vous faut.
+    </p>
   </main>
 
+  <footer>
+    &copy; 2025 CyberNova_Tech — Tous droits réservés.
+  </footer>
 </body>
 </html>
