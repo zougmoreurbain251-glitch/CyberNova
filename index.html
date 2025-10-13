@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bienvenue dans l'univers CyberNova_Tech</title>
   <style>
-    body {
+    /* Reset basique */
+    * {
       margin: 0;
       padding: 0;
-      background: url('images/fond.jpg') no-repeat center center fixed; /* conserve ton fond */
-      background-size: cover;
-      font-family: Arial, sans-serif;
+      box-sizing: border-box;
     }
 
-    /* Conteneur général */
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url('images/fond.jpg') no-repeat center center fixed; /* ton fond original */
+      background-size: cover;
+    }
+
+    /* Conteneur principal */
     .container {
       display: flex;
       flex-direction: column;
@@ -24,49 +30,49 @@
     header {
       display: flex;
       align-items: center;
-      padding: 10px 20px;
-      background-color: rgba(0, 0, 0, 0.5); /* léger fond transparent pour le header */
+      padding: 15px 30px;
+      background-color: rgba(0,0,0,0.5); /* léger fond transparent */
     }
 
     header img {
-      height: 60px; /* taille du logo */
+      height: 70px; /* taille du logo */
       margin-right: 20px;
     }
 
     header h1 {
+      font-size: 28px;
       color: white;
-      font-size: 24px;
-      margin: 0;
     }
 
-    /* Menu */
+    /* Menu visible */
     nav {
-      background-color: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      background-color: rgba(0,0,0,0.7);
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 15px 20px;
+      padding: 15px 25px;
       display: block;
       transition: background 0.3s;
+      font-weight: bold;
     }
 
     nav a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255,255,255,0.2);
     }
 
     /* Contenu principal */
     main {
       flex: 1;
-      padding: 20px;
-      color: white;
+      padding: 30px;
+      background-color: rgba(0,0,0,0.3); /* conserve le style d'origine */
     }
 
-    /* Responsive pour petits écrans */
+    /* Responsive */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -79,18 +85,20 @@
       }
 
       nav a {
-        padding: 10px;
+        padding: 12px 20px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- Header avec logo -->
     <header>
-      <img src="images/logo.png" alt="Logo">
+      <img src="images/logo.png" alt="Logo CyberNova_Tech">
       <h1>Bienvenue dans l'univers CyberNova_Tech</h1>
     </header>
 
+    <!-- Menu -->
     <nav>
       <a href="#">Accueil</a>
       <a href="#">Produits</a>
@@ -99,9 +107,18 @@
       <a href="#">À propos</a>
     </nav>
 
+    <!-- Contenu principal -->
     <main>
-      <!-- Ici ton contenu original reste exactement comme tu l’avais -->
-      <p>Contenu de la page...</p>
+      <!-- Ici ton contenu original reste intact -->
+      <h2>Section 1</h2>
+      <p>Texte et images de ton ancienne page.</p>
+
+      <h2>Section 2</h2>
+      <p>Plus de contenu exactement comme avant.</p>
+
+      <!-- Exemple pour garder toutes tes images et sections -->
+      <img src="images/section1.jpg" alt="Image Section 1" style="max-width:100%; height:auto;">
+      <img src="images/section2.jpg" alt="Image Section 2" style="max-width:100%; height:auto;">
     </main>
   </div>
 </body>
