@@ -1,124 +1,95 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nos Fonctions</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #f0f0f0, #ffffff);
-    }
-
-    header {
-      background-color: #0078D7;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      animation: fadeInDown 1s ease-in-out;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px 20px;
-      gap: 30px;
-    }
-
-    .feature-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 30px;
-      width: 280px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    .feature-card h3 {
-      margin-bottom: 15px;
-      color: #0078D7;
-    }
-
-    .feature-card p {
-      color: #555;
-    }
-
-    .toggle-button {
-      display: block;
-      margin: 40px auto;
-      padding: 12px 24px;
-      background-color: #0078D7;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Contactez-nous — </title>NovaTech
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-
-  <header>
-    <h1>💼 Nos Fonctions</h1>
-    <p>Découvrez les fonctionnalités clés de notre plateforme</p>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">VI_TechHolding</h1>
+      <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="formation.html">Formations</a></li>
+        <li><a href="vente.html">Ventes</a></li>
+        <li><a href="pdg.html">À propos du PDG</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+      <p class="site-subtitle">Nous sommes à votre écoute</p>
+    </div>
   </header>
 
-  <section class="features">
-    <div class="feature-card">
-      <h3>📞 Assistance 24/7</h3>
-      <p>Support client disponible à tout moment pour répondre à vos besoins.</p>
-    </div>
-    <div class="feature-card">
-      <h3>🔒 Sécurité avancée</h3>
-      <p>Vos données sont protégées avec les dernières technologies de chiffrement.</p>
-    </div>
-    <div class="feature-card">
-      <h3>⚡ Performance</h3>
-      <p>Navigation rapide et fluide sur tous les appareils.</p>
-    </div>
-  </section>
+  <main>
+    <section class="contact-section container">
+      <h2>Contactez-nous</h2>
+      <p class="intro">
+        Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.
+      </p>
 
-  <button class="toggle-button" onclick="toggleExtra()">Afficher plus de fonctions</button>
+    
+      <form
+        class="contact-form"
+        action="mailto:contact@monentreprise.com"
+        method="post"
+        enctype="text/plain"
+      >
+        <div class="form-row">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="Nom" placeholder="Zougmore Urbain" required>
+        </div>
 
-  <section class="features hidden" id="extraFeatures">
-    <div class="feature-card">
-      <h3>🌐 Multilingue</h3>
-      <p>Notre site est disponible en plusieurs langues pour une accessibilité globale.</p>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" placeholder="Ouedraogojudicael@.yahoocom" required>
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Téléphone</label>
+          <input type="tel" id="phone" name="Téléphone" placeholder="+226 57 37 30 16">
+        </div>
+
+        <div class="form-row">
+          <label for="subject">Sujet</label>
+          <input type="text" id="subject" name="Sujet" placeholder="Objet de votre demande" required>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" rows="6" placeholder="Rédigez votre message..." required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">Envoyer</button>
+          <button type="reset" class="secondary">Effacer</button>
+        </div>
+      </form>
+
+      <div class="contact-infos">
+        <h3>Nos coordonnées</h3>
+        <ul>
+          <li><strong>Adresse:</strong> Quartier somgandé, Ouagadougou, Burkina Faso</li>
+          <li><strong>Téléphone:</strong> +226 57 37 30 16</li>
+          <li><strong>Email:</strong> zougmoreurbain089@gmail.com</li>
+          <li><strong>Horaires:</strong> Lun–Dimanche, 07h00–22h00</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> NovaTech. Tous droits réservés.</p>
     </div>
-    <div class="feature-card">
-      <h3>📊 Statistiques</h3>
-      <p>Suivez vos performances avec des tableaux de bord interactifs.</p>
-    </div>
-    <div class="feature-card">
-      <h3>🔔 Notifications</h3>
-      <p>Recevez des alertes en temps réel sur les mises à jour importantes.</p>
-    </div>
-  </section>
+  </footer>
 
   <script>
-    function toggleExtra() {
-      const section = document.getElementById('extraFeatures');
-      section.classList.toggle('hidden');
-    }
+    // Année automatique
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
